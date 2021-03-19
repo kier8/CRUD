@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface TasksContract {
     
-    public interface View {
+    interface View {
         
         void displayTasks(List<Task> tasks);
         void addTaskToList(Task task);
@@ -17,7 +17,7 @@ public interface TasksContract {
         
     }
     
-    public interface Presenter {
+    interface Presenter {
         
         void onAddTaskClicked();
         void onSaveTaskClicked(Task task);

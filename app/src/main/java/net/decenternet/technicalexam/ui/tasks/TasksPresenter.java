@@ -5,10 +5,7 @@ import net.decenternet.technicalexam.domain.Task;
 
 public class TasksPresenter implements TasksContract.Presenter {
 
-    private final TaskLocalService taskLocalService;
-
     public TasksPresenter(TaskLocalService taskLocalService) {
-        this.taskLocalService = taskLocalService;
     }
 
     @Override

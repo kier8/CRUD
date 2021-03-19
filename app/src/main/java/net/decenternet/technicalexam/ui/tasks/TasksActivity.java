@@ -1,8 +1,6 @@
 package net.decenternet.technicalexam.ui.tasks;
 
 import android.content.DialogInterface;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,8 +17,6 @@ import net.decenternet.technicalexam.OfflineDatabase;
 import net.decenternet.technicalexam.R;
 import net.decenternet.technicalexam.domain.Task;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class TasksActivity extends AppCompatActivity implements TasksContract.View {
@@ -32,22 +28,6 @@ public class TasksActivity extends AppCompatActivity implements TasksContract.Vi
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-
-        String buffer = offlineDatabase.getDataUser();
-
-        /**
-         * Finish this simple task recording app.
-         * The following are the remaining todos for this project:
-         * 1. Make sure all defects are fixed.
-         * 2. Showing a dialog to add/edit the task.
-         * 3. Allowing the user to toggle it as completed.
-         * 4. Allowing the user to delete a task.
-         *
-         */
-
-        /**
-         * Create data for adding fields
-         */
 
         Button regButton = findViewById(R.id.regBtn);
         regButton.setOnClickListener(new View.OnClickListener() {
@@ -84,20 +64,6 @@ public class TasksActivity extends AppCompatActivity implements TasksContract.Vi
             }
         });
 
-    }
-
-    public ArrayList<HashMap<String, String>> GetUsers(){
-        SQLiteDatabase db = offlineDatabase.getWritableDatabase();
-        ArrayList<HashMap<String, String>> userList = new ArrayList<>();
-        Cursor cursor = db.rawQuery("SELECT * FROM data_user", null);
-        while (cursor.moveToNext()){
-            HashMap<String,String> user = new HashMap<>();
-            user.put("email",cursor.getString(cursor.getColumnIndex("email")));
-            user.put("fname",cursor.getString(cursor.getColumnIndex("fullname")));
-            user.put("num",cursor.getString(cursor.getColumnIndex("number")));
-            userList.add(user);
-        }
-        return  userList;
     }
 
     @Override
