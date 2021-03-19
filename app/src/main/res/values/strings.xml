@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TechnicalExam</string>
+    <string name="quote_here">Never drown in a glass of water</string>
+    <string name="register">Register</string>
+    <string name="add">Add</string>
+    <string name="registered_account">registered account</string>
+</resources>
